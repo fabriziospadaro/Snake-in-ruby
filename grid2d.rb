@@ -13,7 +13,16 @@ attr_accessor :grid
 
   def Reset(value)
     @grid.each_with_index do |v1,y|
-      v1.each_index { |x| @grid[y][x] = value }
+      v1.each_index do |x|
+        if(x==0||x==@xsize-1)
+          @grid[y][x] = "|"
+        elsif(y==0||y==@ysize-1)
+          @grid[y][x] = "-"
+        else
+          @grid[y][x] = " "
+        end
+
+      end
     end
   end
 

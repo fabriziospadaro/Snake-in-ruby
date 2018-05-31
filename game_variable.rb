@@ -14,7 +14,7 @@ def randomize_food_pos
   exit_loop = false
   while !exit_loop
     exit_loop = true
-    $food_pos.Set(rand(0...$fieldSize.x),rand(0...$fieldSize.y))
+    $food_pos.Set(rand(1...$fieldSize.x-1),rand(1...$fieldSize.y-1))
     #check distance from the new food pos to each body part
     #if the distance from all the body part is > x than return the position
     if($snake != nil)
@@ -29,8 +29,8 @@ end
 $score = 0
 
 $field_char = "."
-$food_char = "é"
-$player_char = "@"
+$food_char = "0"
+$player_char = "#"
 
 $game_over = false
 

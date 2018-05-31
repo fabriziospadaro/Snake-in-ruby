@@ -11,16 +11,16 @@ class Vector2D
     @y = _y
   end
 
-  def Constrain_0x(lim_x,lim_y)
+  def Constrain_1x(lim_x,lim_y)
     if(@x >= lim_x)
       @x = lim_x
-    elsif(@x < 0)
-      @x = 0
+    elsif(@x < 1)
+      @x = 1
     end
     if(@y >= lim_y)
       @y = lim_y
-    elsif(@y < 0)
-      @y = 0
+    elsif(@y < 1)
+      @y = 1
     end
   end
 
