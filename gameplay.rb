@@ -7,13 +7,11 @@ def move_player()
   #update snake position based on direction
   $snake.move()
   #constrain just the head on the field
-  $snake.body_part[0].position.Constrain_0x($fieldSize.x-1,$fieldSize.y-1)
+  $snake.body_part[0].position.Constrain_0x($fieldSize.x-1, $fieldSize.y-1)
   #set the food char, in the field on the food position
-  $field.Set($food_pos.y,$food_pos.x,$food_char)
+  $field.Set($food_pos, $food_char)
   #set the snake char, for each part of the snake
-  $snake.body_part.each do |part|
-    $field.Set(part.position.y,part.position.x,$player_char)
-  end
+  $snake.body_part.each { |part| $field.Set(part.position, $player_char) }
 end
 
 def update_direction(_direction)

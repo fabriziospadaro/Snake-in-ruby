@@ -12,9 +12,7 @@ def event_handler
   #check if the head touches any body part, if so, game over
   for i in 1..$snake.body_part.size
     if $snake.body_part[i] != nil
-      if($snake.body_part[i].position == $snake.body_part[0].position)
-        $game_over = true
-      end
+        $game_over = true if $snake.body_part[i].position == $snake.body_part[0].position
     end
   end
 end

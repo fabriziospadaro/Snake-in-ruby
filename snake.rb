@@ -3,7 +3,7 @@ require_relative 'vector2d'
 class BodyPart
   attr_accessor :position
 
-  def initialize(_child = nil, direction)
+  def initialize(_child = self, direction)
     @child = _child #body part
     @position = get_child_position - direction #vector pos
   end
@@ -13,7 +13,7 @@ class BodyPart
   end
 
   def get_child_position
-    if(@child != nil)
+    if(@child != self)
       return @child.position
     else
       return Vector2D.zero

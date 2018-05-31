@@ -19,9 +19,7 @@ def randomize_food_pos
     #if the distance from all the body part is > x than return the position
     if($snake != nil)
       $snake.body_part.each do |part|
-        if(ManhattanDistance(part.position,$food_pos) < 4)
-          exit_loop = false
-        end
+        exit_loop = false if ManhattanDistance(part.position,$food_pos) < 4
       end
     end
   end

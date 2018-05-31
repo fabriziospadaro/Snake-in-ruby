@@ -7,20 +7,13 @@ attr_accessor :grid
     @xsize = _xsize
   end
 
-  def Set(y,x,value)
-    @grid[y][x] = value
-    self
-  end
-
-  def Get(y,x)
-    @grid[y][x]
+  def Set(vector,value)
+    @grid[vector.y][vector.x] = value
   end
 
   def Reset(value)
     @grid.each_with_index do |v1,y|
-      v1.each_with_index do |v2,x|
-        @grid[y][x] = value
-      end
+      v1.each_index { |x| @grid[y][x] = value }
     end
   end
 
